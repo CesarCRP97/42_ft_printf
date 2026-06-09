@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:03:56 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 09:38:41 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 10:50:59 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_print_unsigned(unsigned int n);
 int	ft_print_hex(unsigned int n, char format);
 
 /* Helper function to set the format based on the format character. */
-
+int	ft_putnbr_base(int nbr, char *base, int size);
 
 
 
