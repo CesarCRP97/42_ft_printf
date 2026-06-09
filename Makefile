@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ)
 	cp $(LIBFT) $(NAME)
-	$(AR) $(NAME) $(OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
 $(LIBFT):
 	$(MAKE) -C libft

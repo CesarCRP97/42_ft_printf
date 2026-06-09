@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 11:44:12 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 13:43:41 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	ft_print_hex(unsigned int n, char format)
 		return (ft_putnbr_base((int)n, "0123456789abcdef", 16));
 	if (format == 'X')
 		return (ft_putnbr_base((int)n, "0123456789ABCDEF", 16));
+	return (0);
 }
 
 /**
@@ -77,6 +78,7 @@ int	ft_print_pointer(void *ptr)
 	unsigned long	new_ptr;
 
 	count = 0;
+	new_ptr = (unsigned long)ptr;
 	if (new_ptr == 0)
 		count += ft_print_string("(nil)");
 	else
