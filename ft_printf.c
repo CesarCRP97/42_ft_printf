@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 08:02:58 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 09:33:38 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 09:36:14 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 static int	set_format(char c, va_list args)
 {
 	if (c == 'c')
-		return (ft_print_char(va_arg(args, int)));
+		return (ft_print_character(va_arg(args, int)));
 	else if (c == 's')
 		return (ft_print_string(va_arg(args, char *)));
 	else if (c == 'p')
