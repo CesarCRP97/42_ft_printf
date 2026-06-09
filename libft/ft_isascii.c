@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 08:00:38 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 08:02:28 by cesar            ###   ########.fr       */
+/*   Created: 2026/05/26 10:22:23 by crubio-p          #+#    #+#             */
+/*   Updated: 2026/05/26 10:26:48 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINT_H
-
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdint.h>
-
-
-
-#endif
+int	ft_isascii(int c)
+{
+	return (c >= 0x00 && c <= 0x7f);
+}
