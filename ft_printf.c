@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 08:02:58 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 11:20:36 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:43:23 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	set_format(char c, va_list args)
  * @param ... The variable arguments to be printed.
  * @return The number of characters printed, or -1 on error.
 */
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
@@ -64,7 +64,7 @@ int ft_printf(const char *format, ...)
 	count = 0;
 	while (format[i] != '\0')
 	{
-		if(format[i] == '%' && format[i + 1] == '\0')
+		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		if (format[i] == '%')
 		{

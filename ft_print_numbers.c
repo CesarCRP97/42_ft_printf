@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 11:22:10 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:44:12 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	ft_print_unsigned(unsigned int n)
 
 /**
  * Prints an unsigned integer in hexadecimal format to the standard output.
- * The format parameter determines whether the hexadecimal letters are uppercase or lowercase.
+ * The format parameter determines whether the hexadecimal letters are uppercase
+ * or lowercase.
  * @param n The unsigned integer to be printed.
  * @param format The format character ('x' for lowercase, 'X' for uppercase).
  * @return The number of characters printed.
@@ -72,9 +73,9 @@ int	ft_print_hex(unsigned int n, char format)
 */
 int	ft_print_pointer(void *ptr)
 {
-	int	count;
+	int				count;
 	unsigned long	new_ptr;
-	
+
 	count = 0;
 	if (new_ptr == 0)
 		count += ft_print_string("(nil)");

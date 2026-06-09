@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:03:56 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 11:04:48 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:44:58 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int	ft_print_pointer(void *ptr);
 int	ft_print_number(int n);
 int	ft_print_unsigned(unsigned int n);
 int	ft_print_hex(unsigned int n, char format);
-
 
 #endif
