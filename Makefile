@@ -5,7 +5,12 @@ CFLAGS == -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -rf
 
-SRC =
+HEADERS = libft.h
+
+SRC = ft_printf.c \
+	ft_print_words.c \
+	ft_print_numbers.c \
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

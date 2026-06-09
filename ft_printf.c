@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 08:02:58 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 09:36:14 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:20:36 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
  * @param c The format character.
  * @param args The variable argument list.
  * @return The number of characters printed.
+ * Available format characters:
+ * 'c' - character
+ * 's' - string
+ * 'p' - pointer
+ * 'd' or 'i' - integer
+ * 'u' - unsigned integer
+ * 'x' - hexadecimal (lowercase)
+ * 'X' - hexadecimal (uppercase)
+ * '%' - literal percent sign
  */
 static int	set_format(char c, va_list args)
 {

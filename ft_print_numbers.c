@@ -6,12 +6,19 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 11:03:37 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:22:10 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/**
+ * Helper function to print a number in a specified base.
+ * @param nbr The number to be printed.
+ * @param base The string representing the characters of the base.
+ * @param size The size of the base (e.g., 10 for decimal, 16 for hexadecimal).
+ * @return The number of characters printed.
+*/
 static int	ft_putnbr_base(int nbr, char *base, int size)
 {
 	long int	long_nbr;
@@ -42,7 +49,7 @@ int	ft_print_unsigned(unsigned int n)
 	return (ft_putnbr_base((int)n, "0123456789", 10));
 }
 
-/*
+/**
  * Prints an unsigned integer in hexadecimal format to the standard output.
  * The format parameter determines whether the hexadecimal letters are uppercase or lowercase.
  * @param n The unsigned integer to be printed.
@@ -56,7 +63,8 @@ int	ft_print_hex(unsigned int n, char format)
 	if (format == 'X')
 		return (ft_putnbr_base((int)n, "0123456789ABCDEF", 16));
 }
-/*
+
+/**
  * Prints a pointer address in hexadecimal format to the standard output.
  * If the pointer is NULL, it prints "(nil)".
  * @param ptr The pointer to be printed.

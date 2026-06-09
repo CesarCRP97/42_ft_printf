@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:28:17 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 09:50:03 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:22:25 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_print_character(char c)
 	return (1);
 }
 
-/*
+/**
  * Prints a string to the standard output and returns the number of characters printed.
  * If the input string is NULL, it prints "(null)" and returns 6.
  * @param str The string to be printed.
