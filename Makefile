@@ -1,8 +1,9 @@
 NAME = libftprintf.a
 LIBFT = libft/libft.a
-CC == cc
-CFLAGS == -Wall -Wextra -Werror
-AR = ar rcs
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar
+ARFLAGS = rcs
 RM = rm -rf
 
 HEADERS = libft.h
@@ -12,6 +13,9 @@ SRC = ft_printf.c \
 	ft_print_numbers.c \
 
 OBJ = $(SRC:.c=.o)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
