@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 08:02:58 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 09:25:39 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/09 09:33:38 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@
 static int	set_format(char c, va_list args)
 {
 	if (c == 'c')
-		return (print_char(va_arg(args, int)));
+		return (ft_print_char(va_arg(args, int)));
 	else if (c == 's')
-		return (print_string(va_arg(args, char *)));
+		return (ft_print_string(va_arg(args, char *)));
 	else if (c == 'p')
-		return (print_pointer(va_arg(args, void *)));
+		return (ft_print_pointer(va_arg(args, void *)));
 	else if (c == 'd' || c == 'i')
-		return (print_number(va_arg(args, int)));
+		return (ft_print_number(va_arg(args, int)));
 	else if (c == 'u')
-		return (print_unsigned(va_arg(args, unsigned int)));
+		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		return (print_hex(va_arg(args, unsigned int), c));
+		return (ft_print_hex(va_arg(args, unsigned int), c));
 	else if (c == '%')
-		return (write(1, '%', 1));
+		return (ft_print_character('%'));
 }
 
 /**
