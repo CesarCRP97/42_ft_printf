@@ -52,10 +52,10 @@ SRC = ft_isalpha.c \
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 all: $(NAME)
 
