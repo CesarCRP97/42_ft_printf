@@ -6,12 +6,21 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 12:45:33 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/10 12:48:58 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/10 13:12:23 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/**
+ * Auxiliary function to print the hexadecimal representation of a pointer.
+ * If the pointer is NULL, it prints "(nil)".
+ * @param ptr The pointer to be printed.
+ * @param base The string representing the characters of the base 
+ * 				(e.g., "0123456789abcdef" for hexadecimal).
+ * @param size The size of the base (e.g., 16 for hexadecimal).
+ * @return The number of characters printed.
+*/
 int	ft_print_pointer_direction(unsigned long ptr, char *base, int size)
 {
 	int	count;

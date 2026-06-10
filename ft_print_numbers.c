@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/10 12:44:06 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/10 13:12:45 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ static int	ft_putnbr_base(int nbr, char *base, int size)
 	count++;
 	return (count);
 }
+
 static int	ft_putnbr_unsigned_base(unsigned int nbr, char *base, int size)
 {
 	unsigned long int	long_nbr;
-	int			count;
+	int					count;
 
 	long_nbr = nbr;
 	count = 0;
@@ -57,7 +58,6 @@ static int	ft_putnbr_unsigned_base(unsigned int nbr, char *base, int size)
 	count++;
 	return (count);
 }
-
 
 int	ft_print_number(int n)
 {
