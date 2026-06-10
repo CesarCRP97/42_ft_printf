@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 13:43:41 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:44:06 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,26 @@ static int	ft_putnbr_base(int nbr, char *base, int size)
 	count++;
 	return (count);
 }
+static int	ft_putnbr_unsigned_base(unsigned int nbr, char *base, int size)
+{
+	unsigned long int	long_nbr;
+	int			count;
+
+	long_nbr = nbr;
+	count = 0;
+	if (long_nbr < 0)
+	{
+		write(1, "-", 1);
+		count++;
+		long_nbr = -long_nbr;
+	}
+	if (long_nbr >= (unsigned long int)size)
+		count += ft_putnbr_unsigned_base(long_nbr / size, base, size);
+	write(1, &base[long_nbr % size], 1);
+	count++;
+	return (count);
+}
+
 
 int	ft_print_number(int n)
 {
@@ -46,7 +66,7 @@ int	ft_print_number(int n)
 
 int	ft_print_unsigned(unsigned int n)
 {
-	return (ft_putnbr_base((int)n, "0123456789", 10));
+	return (ft_putnbr_unsigned_base((int)n, "0123456789", 10));
 }
 
 /**
@@ -60,31 +80,8 @@ int	ft_print_unsigned(unsigned int n)
 int	ft_print_hex(unsigned int n, char format)
 {
 	if (format == 'x')
-		return (ft_putnbr_base((int)n, "0123456789abcdef", 16));
+		return (ft_putnbr_unsigned_base((int)n, "0123456789abcdef", 16));
 	if (format == 'X')
-		return (ft_putnbr_base((int)n, "0123456789ABCDEF", 16));
+		return (ft_putnbr_unsigned_base((int)n, "0123456789ABCDEF", 16));
 	return (0);
-}
-
-/**
- * Prints a pointer address in hexadecimal format to the standard output.
- * If the pointer is NULL, it prints "(nil)".
- * @param ptr The pointer to be printed.
- * @return The number of characters printed.
-*/
-int	ft_print_pointer(void *ptr)
-{
-	int				count;
-	unsigned long	new_ptr;
-
-	count = 0;
-	new_ptr = (unsigned long)ptr;
-	if (new_ptr == 0)
-		count += ft_print_string("(nil)");
-	else
-	{
-		count += ft_print_string("0x");
-		count += ft_putnbr_base((unsigned long)ptr, "0123456789abcdef", 16);
-	}
-	return (count);
 }
