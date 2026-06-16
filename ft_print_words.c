@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:28:17 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/09 11:44:36 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:58:02 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	ft_print_character(char c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	write_result;
+
+	write_result = write(1, &c, 1);
+	return (write_result);
 }
 
 /**
@@ -28,17 +30,20 @@ int	ft_print_character(char c)
 int	ft_print_string(char *str)
 {
 	int	count;
+	int	write_result;
 
 	if (!str)
 	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
+		write_result = ft_print_string("(null)");
+		return (write_result);
 	}
 	count = 0;
 	while (str[count] != '\0')
 	{
-		ft_putchar_fd(str[count], 1);
-		count++;
+		write_result = ft_print_character(str[count]);
+		if (write_result == -1)
+			return (-1);
+		count += write_result;
 	}
 	return (count);
 }

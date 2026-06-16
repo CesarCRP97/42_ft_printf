@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 09:30:10 by crubio-p          #+#    #+#             */
-/*   Updated: 2026/06/10 13:28:51 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:11:07 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,39 +23,50 @@ static int	ft_putnbr_base(int nbr, char *base, int size)
 {
 	long int	long_nbr;
 	int			count;
+	int			write_result;
 
 	long_nbr = nbr;
 	count = 0;
 	if (long_nbr < 0)
 	{
-		write(1, "-", 1);
-		count++;
+		write_result = write(1, "-", 1);
+		if (write_result == -1)
+			return (-1);
+		count += write_result;
 		long_nbr = -long_nbr;
 	}
 	if (long_nbr >= size)
-		count += ft_putnbr_base(long_nbr / size, base, size);
-	write(1, &base[long_nbr % size], 1);
-	count++;
-	return (count);
+	{
+		write_result = ft_putnbr_base(long_nbr / size, base, size);
+		if (write_result == -1)
+			return (-1);
+	}
+	else
+		write_result = write(1, &base[long_nbr % size], 1);
+	if (write_result == -1)
+		return (-1);
+	return (count + write_result);
 }
 
 static int	ft_putnbr_unsigned_base(unsigned int nbr, char *base, int size)
 {
 	unsigned long int	long_nbr;
 	int					count;
+	int					write_result;
 
 	long_nbr = nbr;
 	count = 0;
-	if (long_nbr < 0)
-	{
-		write(1, "-", 1);
-		count++;
-		long_nbr = -long_nbr;
-	}
 	if (long_nbr >= (unsigned long int)size)
-		count += ft_putnbr_unsigned_base(long_nbr / size, base, size);
-	write(1, &base[long_nbr % size], 1);
-	count++;
+	{
+		write_result = ft_putnbr_unsigned_base(long_nbr / size, base, size);
+		if (write_result == -1)
+			return (-1);
+		count += write_result;
+	}
+	write_result = write(1, &base[long_nbr % size], 1);
+	if (write_result == -1)
+		return (-1);
+	count += write_result;
 	return (count);
 }
 

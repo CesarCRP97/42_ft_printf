@@ -6,7 +6,7 @@
 /*   By: crubio-p <crubio-p@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 08:02:58 by cesar             #+#    #+#             */
-/*   Updated: 2026/06/09 13:42:45 by crubio-p         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:09:22 by crubio-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		i;
 	int		count;
+	int		write_res;
 
 	if (!format)
 		return (-1);
@@ -68,12 +69,12 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		if (format[i] == '%')
-		{
-			i++;
-			count += set_format(format[i], args);
-		}
+			write_res = set_format(format[++i], args);
 		else
-			count += write(1, &format[i], 1);
+			write_res = write(1, &format[i], 1);
+		if (write_res == -1)
+			return (-1);
+		count += write_res;
 		i++;
 	}
 	va_end(args);
